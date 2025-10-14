@@ -10,6 +10,14 @@ public class AccoutUser extends Accout{
         this.eti = eti;
     }
 
+    //Aqui eu faço a sobreposição
+    //Usando a anotação @Override para usar o metodo da classe pai(super class)
+    //Esta anotação @Override diz para o compilador e programador que aqui ouve uma sobreposição
+    @Override
+    public void welcome() {
+        super.welcome();
+    }
+
     public String getDoc() {
         return doc;
     }

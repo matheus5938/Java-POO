@@ -15,6 +15,10 @@ public class Main {
         accoutUser.setDoc("12345678");
 
         System.out.println("Accout user: \n" + accoutUser.toString());
+        //aqui eu chamo o método da classe pai pelo filho, pois usei o @Override e sobreposição
+        accoutUser.welcome();
+
+        System.out.println("\n");
 
         AccoutPla accoutPla = new AccoutPla();
 

@@ -9,6 +9,10 @@ public class Accout {
         this.age = age;
     }
 
+    public void welcome(){
+        System.out.println("Welcome " + name);
+    }
+
     public String getName() {
         return name;
     }
