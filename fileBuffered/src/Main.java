@@ -25,8 +25,17 @@ public class Main {
         }
 
         //Aqui cria eu tenho o controle de criação de pastas
-        boolean success = new File(strPath + "\\newProject").mkdir();
-        System.out.println("Directory created successfuly: " + success);
+//        boolean success = new File(strPath + "\\newProject").mkdir();
+//        System.out.println("Directory created successfuly: " + success);
+
+        System.out.println("Enter the name of file path: ");
+        String strFile = ent.nextLine();
+
+        File path1 = new File(strFile);
+
+        System.out.println("getName: " + path1.getName());
+        System.out.println("getParent: " + path1.getParent());
+        System.out.println("getPath: " + path1.getPath());
 
         ent.close();
     }
