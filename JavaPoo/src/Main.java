@@ -1,3 +1,5 @@
+import entities.User;
+
 import java.io.*;
 import java.util.Scanner;
 
@@ -5,44 +7,33 @@ public class Main {
     public static void main(String[] args) {
         Scanner ent = new Scanner(System.in);
 
-        String path = "C:\\Users\\Dell\\Documents\\text.txt";
+        String[] lines = new String[] {"Good morning", "Good afternoon", "Good night"};
 
-        FileReader fr = null;
-        BufferedReader br = null;
 
-        //Aqui é para ler o qe esta no arquivo da var path
-        try {
-            fr = new FileReader(path);
-            //Chamando a Buffered faz com que a leitura do arquivo seja mais rápida
-            //Deixando mais fluido
-            br = new BufferedReader(fr);
-            //Também daria certo se fosse
-            //br = new BufferedReader(new FileReader(path));
+        String path = "C:\\Users\\Dell\\Documents\\userTest.txt";
 
-            String line = br.readLine();
-            //Se o arquivo estiver no final o readLine vai retornar null
+        String name = "João";
+        String age = "19";
 
-            //Este é a forma básica de ler um arquivo com o BufferedRead
-            while (line != null){
-                System.out.println(line);
-                line = br.readLine();
-            }
+
+
+        //Para eu não recriar o arquivo e somente adicionar novamente ou de novo é só colocar o true do lado do path
+        //Ou do lado do outro parâmetro
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(path, true))){
+
+
+            bw.write(name);
+            bw.newLine();
+//            for (String line : lines){
+//                //O write diz o que escrever no arquivo
+//                bw.write(line);
+//                bw.newLine();
+//            }
         }
         catch (IOException e){
-            System.out.println("ERRO: " + e.getMessage());
+            e.printStackTrace();
         }
-        finally {
-            try {
-                if (br != null) {
-                    br.close();
-                }
-                if (fr != null) {
-                    fr.close();
-                }
-            }
-            catch (IOException e){
-                e.printStackTrace();
-            }
-        }
+
+        System.out.println("OK");
     }
 }
