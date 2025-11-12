@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner ent = new Scanner(System.in);
 
-        PrintService ps = new PrintService();
+        PrintService<Integer> ps = new PrintService<>();
 
         System.out.print("How many values? ");
         int n = ent.nextInt();
