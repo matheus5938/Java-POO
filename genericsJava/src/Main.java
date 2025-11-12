@@ -6,13 +6,13 @@ public class Main {
     public static void main(String[] args) {
         Scanner ent = new Scanner(System.in);
 
-        PrintService<Integer> ps = new PrintService<>();
+        PrintService<String> ps = new PrintService<>();
 
         System.out.print("How many values? ");
         int n = ent.nextInt();
 
         for (int i = 0; i < n; i++){
-            int value = ent.nextInt();
+            String value = ent.next();
             ps.addValue(value);
         }
 
